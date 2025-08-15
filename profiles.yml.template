@@ -1,0 +1,14 @@
+snowflake_100_tables:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: <YOUR_ACCOUNT>           # e.g. xy12345.ap-south-1
+      user: <YOUR_USER>
+      password: <YOUR_PASSWORD>
+      role: <YOUR_ROLE>
+      database: ANALYTICS
+      warehouse: TRANSFORM_WH
+      schema: dev            # dbt will create dev_raw/dev_stage/dev_mart if you prefer; here we fix schemas per folder
+      threads: 4
+      client_session_keep_alive: false

@@ -1,0 +1,32 @@
+name: 'snowflake_100_tables'
+version: '1.0'
+config-version: 2
+
+profile: 'snowflake_100_tables'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+test-paths: ["tests"]
+
+models:
+  snowflake_100_tables:
+    raw:
+      +materialized: view
+      +schema: raw
+    stage:
+      +materialized: view
+      +schema: stage
+    marts:
+      +materialized: table
+      +schema: mart
+
+seeds:
+  snowflake_100_tables:
+    +schema: raw
+    +quote_columns: false
+    +column_types:
+      id: integer
+      created_at: timestamp_ntz
+      updated_at: timestamp_ntz
+      value: varchar
