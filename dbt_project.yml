@@ -23,7 +23,7 @@ models:
 
 seeds:
   snowflake_100_tables:
-    +schema: raw
+    +schema: raw_seed
     +quote_columns: false
     +column_types:
       id: integer

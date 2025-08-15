@@ -2,7 +2,7 @@ version: 2
 sources:
   - name: raw
     database: DBT_LAB
-    schema: raw
+    schema: RAW
     tables:
       - name: table_001
       - name: table_002
