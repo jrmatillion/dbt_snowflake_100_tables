@@ -1,7 +1,7 @@
 import os
 
 # Path to your folder
-folder_path = r"D:\Study\DBT\Projects\ClouldProject\models\marts"
+folder_path = r"D:\Study\DBT\Projects\ClouldProject\models\stage"
 temp=1
 # Loop through all files in folder (and subfolders if needed)
 for root, dirs, files in os.walk(folder_path):
@@ -14,9 +14,9 @@ for root, dirs, files in os.walk(folder_path):
                 content = f.read()
             
             # Replace `{` with something else (e.g., `{{`)
-            te= str(temp)+"') }"
-            te1=str(temp)+"') }}"
-            new_content = content.replace("{ ref", "{{ref").replace(te,te1)
+            te= "try_to_timestamp_ntz(updated_at) as "
+            te1=""
+            new_content = content.replace(te,te1)
             
             # Write back to file
             with open(file_path, "w", encoding="utf-8") as f:
