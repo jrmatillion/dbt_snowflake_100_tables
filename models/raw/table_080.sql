@@ -5,4 +5,4 @@ select
   created_at,
   updated_at,
   value
-from { source('raw', 'table_080') }
+from {{ source('raw', 'table_080') }}
